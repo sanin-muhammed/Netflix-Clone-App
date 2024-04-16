@@ -1,0 +1,250 @@
+/* -----    GOOGLE FONTS : POPPINS    ----- */
+
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Poppins&display=swap");
+
+/*-----    MAIN CSS    -----*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body {
+    width: 100%;
+    overflow-x: hidden;
+    background: #141414;
+    color: #fff;
+    transition: background 0.3s ease-in-out;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    padding: 5px 40px;
+    transition: 0.5s ease-in-out;
+    z-index: 999;
+    background: linear-gradient(to bottom,#141414da,#00000041,transparent);
+}
+nav.scrolled{
+    background: #141414;
+}
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s ease-in-out;
+}
+.brand {
+    width: 130px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    transition: 0.3s ease-in-out;
+}
+.brand img {
+    width: 100%;
+    transition: 0.3s ease-in-out;
+}
+.menu {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 30px;
+    transition: 0.3s ease-in-out;
+}
+.main_menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.main_menu a {
+    color: #ffffffb9;
+}
+.secondary_menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.secondary_menu div {
+    display: flex;
+    transition: 0.3s ease-in-out;
+}
+.icon svg {
+    fill: #fff;
+    width: 20px;
+    cursor: pointer;
+}
+.dropdown {
+    width: 35px;
+    cursor: pointer;
+}
+.dropdown::after {
+    scale: 0.4;
+    content: url("./assets/dropdown_icon.png");
+    fill: #fff;
+    transition: 0.2s;
+}
+
+.dropdown:hover:after {
+    transform: rotate(180deg);
+}
+.dropdown img {
+    border-radius: 4px;
+    width: 100%;
+}
+
+/*    banner  */
+
+.banner_div {
+    width: 100%;
+    height: 95vh;
+    background: #000;
+    z-index: 999;
+}
+.banner_div img {
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
+    transition: 0.3s ease-in-out;
+    position: relative;
+}
+
+.banner_body{
+    position: absolute;
+    top: 40%;
+    left: 0;
+    padding: 40px;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.banner_body h1{
+    font-size: 3em;
+}
+.banner_btns{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.banner_btns button{
+    padding: 10px 35px;
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.banner_btns button:last-child{
+    background: #ffffff4c;
+    color: #fff;
+}
+
+
+
+/* rows */
+.row_div {
+    width: 100vw;
+    padding: 30px 50px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: padding 0.3s ease-in-out;
+    overflow-y: hidden;
+}
+.row_div:last-child {
+    padding: 30px 50px 50px;
+}
+.row {
+    display: flex;
+    gap: 20px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: 170px;
+    transition: 0.3s ease-in-out;
+}
+.row::-webkit-scrollbar {
+    display: none;
+}
+.row .box {
+    height: 100%;
+    transition: 0.3s;
+}
+.row_div h2 {
+    transition: 0.3s ease-in-out;
+}
+.box img {
+    width: 280px;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: 0.3s ease-in-out;
+}
+
+@media (max-width: 1000px) {
+    nav {
+        padding: 5px 20px;
+    }
+    .main_menu {
+        display: none;
+    }
+    .menu {
+        justify-content: end;
+    }
+    .brand img {
+        width: 100px;
+    }
+}
+@media (max-width: 576px) {
+    nav {
+        padding: 0px 10px;
+    }
+    .secondary_menu div:nth-child(2) {
+        display: none;
+    }
+    .secondary_menu div:nth-child(3) {
+        display: none;
+    }
+    .banner_div img {
+        width: 100%;
+        height: 100%;
+        object-position: center;
+        /* object-fit: contain; */
+    }
+    .banner_div {
+        width: 100%;
+        height: 100%;
+    }
+    .banner_body{
+        display: none;
+    }
+
+    .row_div {
+        padding: 30px 30px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .row_div:last-child {
+        padding: 30px 30px 50px;
+    }
+    .row_div h2 {
+        font-size: 18px;
+    }
+    .row {
+        gap: 20px;
+        height: 150px;
+    }
+
+    .box img {
+        width: 240px;
+    }
+}
